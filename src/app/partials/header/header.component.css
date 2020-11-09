@@ -1,0 +1,18 @@
+.navigation{
+    width: 1920px;
+    background-color: aquamarine;
+    
+    color: black;
+    height: 70px;
+    
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+ .navline {
+    display: inline;
+  }
