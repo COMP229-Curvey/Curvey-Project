@@ -9,6 +9,8 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SurveyComponent } from './pages/survey/survey.component';
+import {CommonService} from './common.service';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -22,9 +24,10 @@ import { SurveyComponent } from './pages/survey/survey.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
