@@ -1,19 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import {BasePageComponent } from '../../partials/base-page/base-page.component';
-import { ActivatedRoute } from '@angular/router';
+import { Component} from '@angular/core';
+import { Survey } from '../../models/survey.model';
+import {SurveyRepository} from '../../models/survey.repository'
+
+
 
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.css']
 })
-export class SurveyComponent extends BasePageComponent implements OnInit {
+export class SurveyComponent{
   
-  constructor(route : ActivatedRoute) {
-    super(route);
+  constructor(private repository:SurveyRepository) {  
   }
 
-  ngOnInit(): void {
+  get surveys():Survey[]
+  {
+    return this.repository.getSurveys();
   }
 
 }
+
+
+
+
+
+
+
+
