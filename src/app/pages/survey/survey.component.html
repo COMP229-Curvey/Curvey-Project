@@ -30,7 +30,6 @@
                             <td class="text-center col-6">
                                 <div >
                                     {{survey.questions }}
-                                   
                                 </div>
                                 <div>
                                 Ratings of questions (From 1 to 10) Respectively   {{survey.answers}}
@@ -41,6 +40,21 @@
                     </tr>
                 
             </table>
+        
+        
+        
+        
+        
+        
         </div>
+
     </div>
   </main>
+  <div *ngFor='let survey of surveys' class="card" style="width: 1920px;"> 
+    <div class="card-body">
+      <h5 class="card-title">{{survey.title}}</h5>
+      <p class="card-text">{{survey.description}}</p>
+      <p class="card-text">{{survey.questions}} /// {{survey.answers}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
