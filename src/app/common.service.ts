@@ -18,7 +18,7 @@ export class CommonService {
   }
 
   deleteSurvey(id){
-    return this.httpClient.post('http://localhost:3000/survey/delete/', {'_id':id})
+    return this.httpClient.post('http://localhost:3000/survey/delete/', {'_id':id});
   }
 }
  

@@ -10,8 +10,10 @@ import { BasePageComponent } from './partials/base-page/base-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SurveyComponent } from './pages/survey/survey.component';
 import {CommonService} from './common.service';
-import {HttpClientModule} from '@angular/common/http'
-
+import {HttpClientModule} from '@angular/common/http';
+import { OpenSurveyComponent } from './pages/open-survey/open-survey.component';
+import { EditSurveyComponent } from './pages/edit-survey/edit-survey.component'
+import {FormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +21,16 @@ import {HttpClientModule} from '@angular/common/http'
     FooterComponent,
     BasePageComponent,
     HomeComponent,
-    SurveyComponent
+    SurveyComponent,
+    OpenSurveyComponent,
+    EditSurveyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]

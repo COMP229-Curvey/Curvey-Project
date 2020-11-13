@@ -38,23 +38,32 @@ var SurveySchema = new Schema({
 var model = mongo.model('survey', SurveySchema, 'survey');
 
 app.post("/survey/create", function(req,res){
-    var newSurvey = new model(req.body);
+    var NewSchema = new Schema({
+        title: {type: String},
+        description: {type: String},
+        questions: {type: Array}
+    }, {versionKey:false});
+    var newModel = mongo.model('newSurvey', NewSchema, 'survey');
+    var newSurvey = new newModel(req.body);
+    console.log(newSurvey);
     newSurvey.save(function(err, data){
         if(err){
             res.send(err)
         }else{
-            res.send({data:"Saved succesfuly"})
+            res.send(data)
         }
     });
 });
 
 app.post("/survey/update", function(req,res){
-    var survey = new model(req.body);
-    survey.findByIdAndUpdate(req.body.id, req.body, function(err, data){
+    let updatedSurvey = req.body;
+    var survey = new model({'_id':id});
+    delete updatedSurvey._id;
+    survey.update( updatedSurvey, function(err, data){
         if(err){
             res.send(err)
         }else{
-            res.send({data:"Updated succesfuly"})
+            res.send(data)
         }
     });
 });

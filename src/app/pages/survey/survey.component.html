@@ -1,1 +1,11 @@
 <app-base-page></app-base-page>
+<a href="javascript:void(0);" (click)="createSurvey()" class="btn btn-primary">Create</a>
+<div *ngFor='let survey of surveys' class="card" style="width: 1920px;"> 
+    <div class="card-body">
+      <h5 class="card-title">{{survey.title}}</h5>
+      <p class="card-text">{{survey.description}}</p>
+      <a href="javascript:void(0);" (click)="openSurvey(survey)" class="btn btn-primary">Answer</a>
+      <a href="javascript:void(0);" (click)="editSurvey(survey)" class="btn btn-primary">Edit</a>
+      <a href="javascript:void(0);" (click)="deleteSurvey(survey._id)" class="btn btn-primary">Delete</a>
+    </div>
+  </div>

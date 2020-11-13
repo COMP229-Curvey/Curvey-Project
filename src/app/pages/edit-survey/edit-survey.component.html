@@ -1,0 +1,13 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <label for="titleLable">Title</label>
+    <input class="form-control" id="title" name="title" [ngModel]="survey.title">
+    <label for="descriptionLable">Description</label>
+    <input class="form-control" id="description" name="description" [ngModel]="survey.description">
+    <div *ngFor='let question of survey.questions; index as i' class="form-group"> 
+        <label for="labelLable">Label</label>
+        <input class="form-control" id="label" name="label" [ngModel]="question.label">
+        <label for="styleLable">Title</label>
+        <input class="form-control" id="style" name="style" [ngModel]="question.style">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
