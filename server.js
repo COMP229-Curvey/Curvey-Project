@@ -88,5 +88,11 @@ app.get("/survey", function(req,res){
     });
 });
 
-app.listen(process.env.PORT || 3000, 
-    () => console.log("Server is running..."+process.env.PORT));
+app.use(express.static(__dirname + '/dist/<curvey-project>'));
+
+app.get('/*', function(req,res) {
+    
+res.sendFile(path.join(__dirname+'/dist/<curvey-project>/index.html'));
+});
+
+app.listen(process.env.PORT || 8080);
