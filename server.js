@@ -45,7 +45,6 @@ app.post("/survey/create", function(req,res){
     }, {versionKey:false});
     var newModel = mongo.model('newSurvey', NewSchema, 'survey');
     var newSurvey = new newModel(req.body);
-    console.log(newSurvey);
     newSurvey.save(function(err, data){
         if(err){
             res.send(err)
@@ -57,7 +56,7 @@ app.post("/survey/create", function(req,res){
 
 app.post("/survey/update", function(req,res){
     let updatedSurvey = req.body;
-    var survey = new model({'_id':id});
+    var survey = new model({'_id':updatedSurvey._id});
     delete updatedSurvey._id;
     survey.update( updatedSurvey, function(err, data){
         if(err){
