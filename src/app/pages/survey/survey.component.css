@@ -1,0 +1,21 @@
+.card_survey {
+    width: 50%; 
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.curvey_button{
+    margin-left: 10px;
+}
+
+.card_survey_button{
+    width: 10%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-left: 315px;
+}
+
+.survey_description{
+    text-align: center;
+}

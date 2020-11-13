@@ -1,2 +1,7 @@
-
-
+.curvey_footer{
+    position: unset;    
+    text-align: center;
+    background-color: #343a40;
+    color: white;
+    padding-top: 10px;
+}
