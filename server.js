@@ -21,8 +21,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, "/dist/", 'index.html'));
+app.get('*', (req, res) => {
+    res.sendFile(`./front-end/dist/index.html`); 
 });
 
 app.use(function(req, res, next){
