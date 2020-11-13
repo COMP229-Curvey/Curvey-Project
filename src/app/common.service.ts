@@ -4,21 +4,22 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CommonService {
+  private surveysUrl = '/api/survey/';
   constructor(private httpClient: HttpClient) { }
   saveSurvey(survey){
-    return this.httpClient.post('http://localhost:8080/survey/create/', survey)
+    return this.httpClient.post(this.surveysUrl+'create/', survey)
   }
 
   updateSurvey(survey){
-    return this.httpClient.post('http://localhost:8080/survey/update/', survey)
+    return this.httpClient.post(this.surveysUrl+'update/', survey)
   }
 
   getSurveys(){
-    return this.httpClient.get('http://localhost:8080/survey/')
+    return this.httpClient.get(this.surveysUrl)
   }
 
   deleteSurvey(id){
-    return this.httpClient.post('http://localhost:8080/survey/delete/', {'_id':id});
+    return this.httpClient.post(this.surveysUrl+'delete/', {'_id':id});
   }
 }
  

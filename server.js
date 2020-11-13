@@ -18,6 +18,9 @@ app.use(bodyParser());
 app.use(bodyParser.json({limit:'5mb'}));
 app.use(bodyParser.urlencoded({extended: true}));
 
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
+
 app.use(function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -37,7 +40,7 @@ var SurveySchema = new Schema({
 
 var model = mongo.model('survey', SurveySchema, 'survey');
 
-app.post("/survey/create", function(req,res){
+app.post("/api/survey/create", function(req,res){
     var NewSchema = new Schema({
         title: {type: String},
         description: {type: String},
@@ -54,7 +57,7 @@ app.post("/survey/create", function(req,res){
     });
 });
 
-app.post("/survey/update", function(req,res){
+app.post("/api/survey/update", function(req,res){
     let updatedSurvey = req.body;
     var survey = new model({'_id':updatedSurvey._id});
     delete updatedSurvey._id;
@@ -67,7 +70,7 @@ app.post("/survey/update", function(req,res){
     });
 });
 
-app.post("/survey/delete", function(req,res){
+app.post("/api/survey/delete", function(req,res){
     var survey = new model(req.body);
     survey.remove({_id: req.body.id}, function(err){
         if(err){
@@ -78,7 +81,7 @@ app.post("/survey/delete", function(req,res){
     });
 });
 
-app.get("/survey", function(req,res){
+app.get("/api/survey", function(req,res){
     model.find({}, function(err, data){
         if(err){
             res.send(err)
@@ -88,11 +91,8 @@ app.get("/survey", function(req,res){
     });
 });
 
-app.use(express.static(__dirname + '/dist/<curvey-project>'));
 
-app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/dist/<curvey-project>/index.html'));
-});
-
-app.listen(process.env.PORT || 8080);
+var server = app.listen(process.env.PORT || 8080, function () {
+    var port = server.address().port;
+    console.log("App now running on port", port);
+  });
