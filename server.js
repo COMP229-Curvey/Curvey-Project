@@ -18,12 +18,12 @@ app.use(bodyParser());
 app.use(bodyParser.json({limit:'5mb'}));
 app.use(bodyParser.urlencoded({extended: true}));
 
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+// var distDir = __dirname + "/dist/";
+// app.use(express.static(distDir));
 
-app.get('*', (req, res) => {
-    res.sendFile(`./front-end/dist/index.html`); 
-});
+// app.get('*', (request, response) => {
+// 	response.sendFile(path.join(__dirname, "/dist/", 'index.html'));
+// });
 
 app.use(function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -96,7 +96,7 @@ app.get("/api/survey", function(req,res){
 });
 
 
-var server = app.listen(process.env.PORT || 8080, function () {
+var server = app.listen(process.env.PORT || 3000, function () {
     var port = server.address().port;
     console.log("App now running on port", port);
   });

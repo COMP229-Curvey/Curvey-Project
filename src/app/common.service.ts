@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CommonService {
-  private surveysUrl = '/api/survey/';
+  private surveysUrl = 'http://localhost:3000/api/survey/';
   constructor(private httpClient: HttpClient) { }
   saveSurvey(survey){
     return this.httpClient.post(this.surveysUrl+'create/', survey)
