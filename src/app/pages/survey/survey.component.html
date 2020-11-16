@@ -1,17 +1,19 @@
-<div class="survey_description">
-<app-base-page></app-base-page>
-</div>
+<div class="body-wrapper">
+  <div class="survey_description">
+  <app-base-page></app-base-page>
+  </div>
 
-<div class="card card_survey_button">
-<a href="javascript:void(0);" (click)="createSurvey()" class="btn btn-primary">Create</a>
-</div>
+  <div class="card card_survey_button">
+  <a href="javascript:void(0);" (click)="createSurvey()" class="btn btn-primary">Create</a>
+  </div>
 
-<div *ngFor='let survey of surveys' class="card card_survey"> 
-    <div class="card-body">
-      <h5 class="card-title">{{survey.title}}</h5>
-      <p class="card-text">{{survey.description}}</p>
-      <a href="javascript:void(0);" (click)="openSurvey(survey)" class="btn btn-primary curvey_button">Answer</a>
-      <a href="javascript:void(0);" (click)="editSurvey(survey)" class="btn btn-primary curvey_button">Edit</a>
-      <a href="javascript:void(0);" (click)="deleteSurvey(survey._id)" class="btn btn-primary curvey_button">Delete</a>
-    </div>
+  <div *ngFor='let survey of surveys' class="card card_survey"> 
+      <div class="card-body">
+        <h5 class="card-title">{{survey.title}}</h5>
+        <p class="card-text">{{survey.description}}</p>
+        <a href="javascript:void(0);" (click)="openSurvey(survey)" class="btn btn-primary curvey_button">Answer</a>
+        <a href="javascript:void(0);" (click)="editSurvey(survey)" class="btn btn-primary curvey_button">Edit</a>
+        <a href="javascript:void(0);" (click)="deleteSurvey(survey._id)" class="btn btn-primary curvey_button">Delete</a>
+      </div>
+  </div>
 </div>

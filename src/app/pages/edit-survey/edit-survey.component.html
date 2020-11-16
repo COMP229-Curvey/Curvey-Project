@@ -1,3 +1,4 @@
+<div class="body-wrapper">
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <label for="titleLable">Title</label>
     <input required type="text" class="form-control" id="title" name="title" [ngModel]="survey.title">
@@ -13,4 +14,4 @@
     <a href="javascript:void(0);" (click)="addField()" class="btn btn-primary">Add Question</a>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
- 
+</div>

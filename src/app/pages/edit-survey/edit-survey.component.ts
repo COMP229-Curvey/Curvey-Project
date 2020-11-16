@@ -13,6 +13,7 @@ export class EditSurveyComponent implements OnInit {
 
   onSubmit(form){
     var value = form.form.value;
+    console.log(this.method);
     if(this.method === 'edit'){
       this.service.updateSurvey(this.formatResponse(value, this.survey._id)).subscribe(data=>this.router.navigate(['/survey']));
     }else{

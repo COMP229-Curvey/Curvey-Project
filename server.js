@@ -50,7 +50,7 @@ app.post("/api/survey/create", function(req,res){
         description: {type: String},
         questions: {type: Array}
     }, {versionKey:false});
-    var newModel = mongo.model('newSurvey', NewSchema, 'survey');
+    var newModel = mongo.model(req.body.title, NewSchema, 'survey');
     var newSurvey = new newModel(req.body);
     newSurvey.save(function(err, data){
         if(err){
