@@ -18,12 +18,12 @@ app.use(bodyParser());
 app.use(bodyParser.json({limit:'5mb'}));
 app.use(bodyParser.urlencoded({extended: true}));
 
-// var distDir = __dirname + "/dist/";
-// app.use(express.static(distDir));
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
-// app.get('*', (request, response) => {
-// 	response.sendFile(path.join(__dirname, "/dist/", 'index.html'));
-// });
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, "/dist/", 'index.html'));
+});
 
 app.use(function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin', '*');
