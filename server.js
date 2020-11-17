@@ -21,9 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, "/dist/", 'index.html'));
-});
+
 
 app.use(function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -86,13 +84,17 @@ app.post("/api/survey/delete", function(req,res){
 });
 
 app.get("/api/survey", function(req,res){
-    model.find(null, function(err, data){
+    model.find({}, function(err, data){
         if(err){
             res.send(err)
         }else{
             res.send(data)
         }
     });
+});
+
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, "/dist/", 'index.html'));
 });
 
 
