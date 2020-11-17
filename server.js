@@ -86,7 +86,7 @@ app.post("/api/survey/delete", function(req,res){
 });
 
 app.get("/api/survey", function(req,res){
-    model.find({}, function(err, data){
+    model.find(null, function(err, data){
         if(err){
             res.send(err)
         }else{
