@@ -14,6 +14,17 @@ import {HttpClientModule} from '@angular/common/http';
 import { OpenSurveyComponent } from './pages/open-survey/open-survey.component';
 import { EditSurveyComponent } from './pages/edit-survey/edit-survey.component'
 import {FormsModule} from "@angular/forms";
+// Added for security
+import { JwtModule } from '@auth0/angular-jwt';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
+// End of security code
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,16 +34,26 @@ import {FormsModule} from "@angular/forms";
     HomeComponent,
     SurveyComponent,
     OpenSurveyComponent,
-    EditSurveyComponent
+    EditSurveyComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    // Added for security
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:3000'], // Change this for production
+        blacklistedRoutes: ['localhost:3000/users/signIn'] // Change this for production
+      }
+    })
+    // End of security code
   ],
-  providers: [CommonService],
+  providers: [CommonService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
