@@ -19,6 +19,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -35,7 +36,8 @@ export function tokenGetter() {
     SurveyComponent,
     OpenSurveyComponent,
     EditSurveyComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,8 +49,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:3000'], // Change this for production
-        blacklistedRoutes: ['localhost:3000/users/signIn'] // Change this for production
+        //whitelistedDomains: ['localhost:3000'], // Change this for production
+        //blacklistedRoutes: ['localhost:3000/users/signIn'] // Change this for production
       }
     })
     // End of security code
