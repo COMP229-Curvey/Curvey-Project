@@ -10,6 +10,7 @@ const config = require('../env.config');
 const apiSecret = config.apiSecret;
 const Member = config.permissionLevels.Member;
 const Master = config.permissionLevels.Master;
+const Surfer = config.permissionLevels.Master;
 
 router.route('/')
       .post(users.create)
@@ -25,10 +26,10 @@ router.route('/:username')
     });
 
 router.route('/:username/promoteToMember')
-    .patch([passport.authenticate('jwt', {session: false}), permissionController.minimumPermissionLevelRequired(Master), users.promoteTo(Member)]);
+    .patch([passport.authenticate('jwt', {session: false}), permissionController.minimumPermissionLevelRequired(Master), users.promoteTo(Member | Surfer)]);
 
 router.route('/:username/promoteToMaster')
-    .patch([passport.authenticate('jwt', {session: false}), permissionController.minimumPermissionLevelRequired(Master), users.promoteTo(Master)]);
+    .patch([passport.authenticate('jwt', {session: false}), permissionController.minimumPermissionLevelRequired(Master), users.promoteTo(Master | Member | Surfer)]);
 
 
 
