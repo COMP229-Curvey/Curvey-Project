@@ -10,16 +10,20 @@ import { BasePageComponent } from './partials/base-page/base-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SurveyComponent } from './pages/survey/survey.component';
 import {CommonService} from './common.service';
+import {SurveyService} from './survey.service';
+import {UserService} from './user.service';
 import {HttpClientModule} from '@angular/common/http';
 import { OpenSurveyComponent } from './pages/open-survey/open-survey.component';
 import { EditSurveyComponent } from './pages/edit-survey/edit-survey.component'
 import {FormsModule} from "@angular/forms";
 // Added for security
 import { JwtModule } from '@auth0/angular-jwt';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { RegistrationComponent } from './pages/registration/registration.component';
+import { UsersComponent } from './pages/users/users.component';
+import { EditUserComponent } from './pages/edit-user/edit-user.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -38,6 +42,8 @@ export function tokenGetter() {
     EditSurveyComponent,
     LoginComponent,
     RegistrationComponent,
+    UsersComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,7 @@ export function tokenGetter() {
     })
     // End of security code
   ],
-  providers: [CommonService, AuthService, AuthGuard],
+  providers: [CommonService, SurveyService, UserService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

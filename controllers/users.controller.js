@@ -96,3 +96,13 @@ exports.list = function(req, res, next) {
         }
     });
 };
+
+exports.delete = function(req, res, next) {
+    User.deleteOne({username: req.body.username}, (err, result) => {
+        if (err) {
+            return next(err);
+        } else {
+            res.status(200).json(result);
+        }
+    });
+};

@@ -3,6 +3,7 @@ var router = express.Router(); // Load the router from express API
 const passport = require('passport'); // Load passport API
 const jwt = require('jsonwebtoken'); // Load jsonwebtoken API
 var users = require('../controllers/users.controller'); // Load users.controller
+const User = require('mongoose').model('User');
 require('../controllers/auth.controller');
 const permissionController = require('../controllers/permission.controller');
 const config = require('../env.config');
@@ -16,12 +17,12 @@ router.route('/')
 
 router.route('/:username')
     .patch([passport.authenticate('jwt', {session: false}), permissionController.onlySameUserOrAdminCanDoThisAction, users.changePassword])
-    .put([passport.authenticate('jwt', {session: false}), permissionController.onlySameUserOrAdminCanDoThisAction, async (req, res, next) => {
+    .put(async (req, res, next) => {
         if (req.body.permissionLevel){
             delete req.body.permissionLevel; // We cannot change permission level from this method.
         }
         users.edit(req,res,next); // Edit method prevents password and username modification
-    }]);
+    });
 
 router.route('/:username/promoteToMember')
     .patch([passport.authenticate('jwt', {session: false}), permissionController.minimumPermissionLevelRequired(Master), users.promoteTo(Member)]);
@@ -39,6 +40,11 @@ router.route('/signUp')
                 user: req.user
             });
         }]);
+router.route("/list")
+    .get(users.list);
+
+router.route("/delete")
+    .post(users.delete);
 
 router.post(
     '/signIn',

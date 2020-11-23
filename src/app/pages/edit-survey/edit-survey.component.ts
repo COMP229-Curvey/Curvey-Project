@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ Router} from '@angular/router';
-import {CommonService} from '../../common.service';
+import {SurveyService} from '../../survey.service';
 @Component({
   selector: 'app-edit-survey',
   templateUrl: './edit-survey.component.html',
@@ -9,11 +9,10 @@ import {CommonService} from '../../common.service';
 export class EditSurveyComponent implements OnInit {
   survey: any;
   method: string;
-  constructor(private router:Router, private service: CommonService) { }
+  constructor(private router:Router, private service: SurveyService) { }
 
   onSubmit(form){
     var value = form.form.value;
-    console.log(this.method);
     if(this.method === 'edit'){
       this.service.updateSurvey(this.formatResponse(value, this.survey._id)).subscribe(data=>this.router.navigate(['/survey']));
     }else{

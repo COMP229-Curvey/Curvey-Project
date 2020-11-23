@@ -1,0 +1,22 @@
+<div class="body-wrapper">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <label for="forenameLabel">First Name</label>
+        <input required type="text" class="form-control" id="forename" name="forename" [ngModel]="user.forename">
+        <label for="surnameLabel">Last Name</label>
+        <input required type="text" class="form-control" id="surname" name="surname" [ngModel]="user.surname">
+        <label for="emailLabel">Email</label>
+        <input required type="email" class="form-control" id="email" name="email" [ngModel]="user.email">
+        <label for="usernameLabel">Username</label>
+        <input required type="text" class="form-control" id="username" name="username" [ngModel]="user.username">
+        <label for="passwordLabel">Password</label>
+        <input required type="password" class="form-control" id="password" name="password" [ngModel]="user.password">
+        <label for="permissionLevelLabel">Permission Level</label>
+        <select required id="permissionLevel" name="permissionLevel">
+            <option [ngValue]="" disabled>Select a level</option>
+            <option [ngValue]="1" >Surfer</option>
+            <option [ngValue]="32768">Member</option>
+            <option [ngValue]="1073741824">Administrator</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>

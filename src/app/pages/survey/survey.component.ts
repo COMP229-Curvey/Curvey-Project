@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {BasePageComponent } from '../../partials/base-page/base-page.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import {CommonService} from '../../common.service';
-
+import {SurveyService} from '../../survey.service';
+import { AuthService } from '../../auth.service';
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
@@ -10,7 +10,7 @@ import {CommonService} from '../../common.service';
 })
 export class SurveyComponent extends BasePageComponent implements OnInit {
   
-  constructor(route : ActivatedRoute, private router: Router, private service: CommonService) {
+  constructor(public auth: AuthService, route : ActivatedRoute, private router: Router, private service: SurveyService) {
     super(route);
   }
   surveys:any;

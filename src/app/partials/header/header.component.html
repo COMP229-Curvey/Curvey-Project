@@ -13,9 +13,9 @@
 
     <div>
       <ul class="navbar-nav mr-auto" style="margin-left: 70px;">
-        <li class="nav-item"><a class="nav-link" href="/login">Login </a></li>
-        <li class="nav-item"><a class="nav-link" href="/registration"> Signup </a></li>
-        <li class="nav-item"><a class="nav-link" (click)="logout()" href="/home" *ngIf="auth.loggedIn">Logout</a></li> 
+        <li class="nav-item"><a class="nav-link" href="/login" *ngIf="!this.auth.loggedIn">Login </a></li>
+        <li class="nav-item"><a class="nav-link" href="/registration" *ngIf="!this.auth.loggedIn"> Signup </a></li>
+        <li class="nav-item"><a class="nav-link" (click)="logout()" href="/home" *ngIf="this.auth.loggedIn">Logout</a></li> 
       </ul>
     </div>
   
@@ -23,7 +23,7 @@
       <ul class="navbar-nav ml-auto">  
             <li class="nav-item"><a class="nav-link" href="/home">Home </a></li>
             <li class="nav-item"><a class="nav-link" href="/survey" routerLinkActive="active" > Surveys </a></li>
-
+            <li class="nav-item"><a class="nav-link" href="/users" routerLinkActive="active" *ngIf="this.auth.loggedIn"> Users </a></li>
       </ul>
     </div>
     
