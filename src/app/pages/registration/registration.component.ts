@@ -13,7 +13,9 @@ export class RegistrationComponent extends BasePageComponent implements OnInit {
   constructor(route: ActivatedRoute, private router:Router, private service: UserService) { 
     super(route);
   }
-
+  public username: string;
+  public password: string;
+  public email: string;
   onSubmit(form)
   {
     let value = form.form.value;

@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent,data:{title:'Home'}},
   {path:'survey',component:SurveyComponent,data:{title:'Survey', canActivate: [AuthGuard]}},
   {path:'users',component:UsersComponent,data:{title:'Users', canActivate: [AuthGuard]}},
-  {path:'open-survey',component:OpenSurveyComponent, canActivate: [AuthGuard]},
+  {path:'open-survey',component:OpenSurveyComponent},
   {path:'edit-survey',component:EditSurveyComponent, canActivate: [AuthGuard]},
   {path:'edit-user',component:EditUserComponent, canActivate: [AuthGuard]},
   { path: 'registration', component: RegistrationComponent},
