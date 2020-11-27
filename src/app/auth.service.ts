@@ -16,6 +16,7 @@ private surveysUrl = 'http://localhost:3000/api';
     return this.http.post<{token: string}>(this.surveysUrl+'/users/signIn', {username: username, password: password})
         .pipe(
             map(result => {
+              console.log(result);
               localStorage.setItem('access_token', result.token);
               return true;
             })

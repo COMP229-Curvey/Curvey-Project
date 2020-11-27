@@ -23,7 +23,8 @@
       <ul class="navbar-nav ml-auto">  
             <li class="nav-item"><a class="nav-link" href="/home">Home </a></li>
             <li class="nav-item"><a class="nav-link" href="/survey" routerLinkActive="active" > Surveys </a></li>
-            <li class="nav-item"><a class="nav-link" href="/users" routerLinkActive="active" *ngIf="this.auth.loggedIn"> Users </a></li>
+            <li class="nav-item"><a class="nav-link" href="/survey-management" routerLinkActive="active" *ngIf="this.auth.loggedIn"> Surveys Management </a></li>
+            <li class="nav-item"><a class="nav-link" href="/users" routerLinkActive="active" *ngIf="this.auth.loggedIn"> Users Management </a></li>
       </ul>
     </div>
     

@@ -1,6 +1,12 @@
 <h1>Sign Up</h1>
 <div>
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <label for="forenameLable">First Name</label>
+    <input required type="text" class="form-control" id="forename" name="forename" [(ngModel)]="forename">
+
+    <label for="surnameLable">Last Name</label>
+    <input required type="text" class="form-control" id="surname" name="surname" [(ngModel)]="surname">
+
     <label for="usernameLable">Username</label>
     <input required type="text" class="form-control" id="username" name="username" [(ngModel)]="username">
     

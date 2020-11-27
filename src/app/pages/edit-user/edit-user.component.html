@@ -10,13 +10,6 @@
         <input required type="text" class="form-control" id="username" name="username" [ngModel]="user.username">
         <label for="passwordLabel">Password</label>
         <input required type="password" class="form-control" id="password" name="password" [ngModel]="user.password">
-        <label for="permissionLevelLabel">Permission Level</label>
-        <select required id="permissionLevel" name="permissionLevel">
-            <option [ngValue]="" disabled>Select a level</option>
-            <option [ngValue]="1" >Surfer</option>
-            <option [ngValue]="32768">Member</option>
-            <option [ngValue]="1073741824">Administrator</option>
-        </select>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>

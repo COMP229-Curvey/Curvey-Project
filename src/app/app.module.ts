@@ -24,6 +24,7 @@ import { AuthGuard } from './auth.guard';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { UsersComponent } from './pages/users/users.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
+import { SurveyManagementComponent } from './pages/survey-management/survey-management.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -44,6 +45,7 @@ export function tokenGetter() {
     RegistrationComponent,
     UsersComponent,
     EditUserComponent,
+    SurveyManagementComponent,
   ],
   imports: [
     BrowserModule,

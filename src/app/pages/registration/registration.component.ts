@@ -13,6 +13,8 @@ export class RegistrationComponent extends BasePageComponent implements OnInit {
   constructor(route: ActivatedRoute, private router:Router, private service: UserService) { 
     super(route);
   }
+  public forename: string;
+  public surname: string;
   public username: string;
   public password: string;
   public email: string;

@@ -5,18 +5,25 @@ const JWTstrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 const config = require('../env.config');
 const apiSecret = config.apiSecret;
-
+const argon2 = require('argon2');
 passport.use(
     'signUp',
     new localStrategy(
         {
             usernameField: 'username',
             passwordField: 'password',
-            emailField: 'email',
+            passReqToCallback: true
         },
-        async (username, password, email, done) => {
+        async (req, username, password, done) => {
             try {
-                const user = await UserModel.create({ username, password, email });
+                const pass = await argon2.hash(password, {
+                    type: argon2.argon2id,
+                    memoryCost: 2 ** 16,
+                    hashLength: 64,
+                    saltLength: 32,
+                    parallelism: 2
+                })
+                const user = await UserModel.create({ forename: req.body.forename, surname: req.body.surname, username, password: pass, email:req.body.email, permissionLevel: 1 });
                 return done(null, user);
             } catch (error) {
                 done(error);
