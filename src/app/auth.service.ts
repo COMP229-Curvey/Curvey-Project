@@ -8,12 +8,12 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 // Local url
-private surveysUrl = 'http://localhost:3000/api';
+private surveysUrl = 'http://localhost:3000/api/';
 // Heroku url
 // private surveysUrl = 'https://comp229-curvey-project.herokuapp.com/api/';
   constructor(private http: HttpClient) { }
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<{token: string}>(this.surveysUrl+'/users/signIn', {username: username, password: password})
+    return this.http.post<{token: string}>(this.surveysUrl+'users/signIn', {username: username, password: password})
         .pipe(
             map(result => {
               console.log(result);
