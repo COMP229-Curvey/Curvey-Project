@@ -1,18 +1,20 @@
 .navigation{
-    width: 1920px;
-    background-color: aquamarine;
-    
-    color: black;
-    height: 70px;
-    
+  width: 1920px;
+  background-color: aquamarine;
+  color: black;
+  height: 70px;
+}
+
+.curvey_nav{
+margin-right: 0px;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
- .navline {
-    display: inline;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navline {
+  display: inline;
+}

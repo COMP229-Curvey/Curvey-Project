@@ -6,8 +6,7 @@ import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [
-  ]
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   public username: string;

@@ -16,3 +16,29 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+  .center_form{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.card_survey {
+  width: 50%; 
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.curvey_button{
+  margin-left: 10px;
+}
+
+.card_survey_button{
+  width: 10%;
+  margin-bottom: 10px;
+}
+
+.curvey_button{
+  margin-left: 10px;
+}

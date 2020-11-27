@@ -1,9 +1,15 @@
-<form>
-    <h5 class="card-title">{{survey.title}}</h5>
-    <p class="card-text">{{survey.description}}</p>
-    <div *ngFor='let question of survey.questions; index as i' class="form-group"> 
-        <label for="question_{{i}}_label">{{question.label}}</label>
-        <input class="form-control" id="question_{{i}}_input">
+<div class="body-wrapper">
+    <div class="center_form">
+        <form>
+            <h5 style="text-align: center;" class="card-title">{{survey.title}}</h5>
+            <p style="text-align: center;" class="card-text">{{survey.description}}</p>
+            <div *ngFor='let question of survey.questions; index as i' class="form-group"> 
+                <label for="question_{{i}}_label">{{question.label}}</label>
+                <input class="form-control" id="question_{{i}}_input">
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+</div>

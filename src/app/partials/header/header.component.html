@@ -9,15 +9,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-
-    <div>
-      <ul class="navbar-nav mr-auto" style="margin-left: 70px;">
-        <li class="nav-item"><a class="nav-link" href="/login" *ngIf="!this.auth.loggedIn">Login </a></li>
-        <li class="nav-item"><a class="nav-link" href="/registration" *ngIf="!this.auth.loggedIn"> Signup </a></li>
-        <li class="nav-item"><a class="nav-link" (click)="logout()" href="/home" *ngIf="this.auth.loggedIn">Logout</a></li> 
-      </ul>
-    </div>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">  
       <ul class="navbar-nav ml-auto">  
@@ -25,7 +16,10 @@
             <li class="nav-item"><a class="nav-link" href="/survey" routerLinkActive="active" > Surveys </a></li>
             <li class="nav-item"><a class="nav-link" href="/survey-management" routerLinkActive="active" *ngIf="this.auth.loggedIn"> Surveys Management </a></li>
             <li class="nav-item"><a class="nav-link" href="/users" routerLinkActive="active" *ngIf="this.auth.loggedIn"> Users Management </a></li>
-      </ul>
+            <li class="nav-item"><a class="nav-link" href="/login" *ngIf="!this.auth.loggedIn">Login </a></li>
+            <li class="nav-item"><a class="nav-link" href="/registration" *ngIf="!this.auth.loggedIn"> Signup </a></li>
+            <li class="nav-item"><a class="nav-link" (click)="logout()" href="/home" *ngIf="this.auth.loggedIn">Logout</a></li>
+          </ul>
     </div>
     
 </nav>
