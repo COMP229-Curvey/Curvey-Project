@@ -9,7 +9,7 @@
         <div *ngFor='let question of survey.questions; index as i' class="form-group"> 
             <label for="labelLable_{{i}}">Label</label>
             <input required type="text" class="form-control" id="label_{{i}}" name="label_{{i}}" [ngModel]="question.label">
-            <label for="styleLable_{{i}}">Title</label>
+            <label for="styleLable_{{i}}">Style</label>
             <input required type="number" class="form-control" id="style_{{i}}" name="style_{{i}}" [ngModel]="question.style">
         </div>
 
