@@ -31,6 +31,10 @@ export class SurveyManagementComponent extends BasePageComponent implements OnIn
     this.router.navigate(['/edit-survey'],{state: null})
   }
 
+  responseSurvey(survey){
+    this.router.navigate(['/response-survey'],{state: survey})
+  }
+
   ngOnInit(): void {
     this.getSurveys();
   }

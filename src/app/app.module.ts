@@ -25,6 +25,7 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { UsersComponent } from './pages/users/users.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { SurveyManagementComponent } from './pages/survey-management/survey-management.component';
+import { ResponseSurveyComponent } from './pages/response-survey/response-survey.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -46,6 +47,7 @@ export function tokenGetter() {
     UsersComponent,
     EditUserComponent,
     SurveyManagementComponent,
+    ResponseSurveyComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,10 +13,12 @@
             <th>Description</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
         <tr *ngFor='let survey of surveys'>
             <td>{{survey.title}}</td>
             <td>{{survey.description}}</td>
+            <td><a href="javascript:void(0);" (click)="responseSurvey(survey)" class="btn btn-primary" *ngIf="this.auth.loggedIn">Responses</a></td>
             <td><a href="javascript:void(0);" (click)="editSurvey(survey)" class="btn btn-primary" *ngIf="this.auth.loggedIn">Edit</a></td>
             <td><a href="javascript:void(0);" (click)="deleteSurvey(survey._id)" class="btn btn-primary" *ngIf="this.auth.loggedIn">Delete</a></td>
         </tr>

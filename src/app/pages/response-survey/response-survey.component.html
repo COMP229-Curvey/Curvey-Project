@@ -1,0 +1,9 @@
+<div class="body-wrapper">
+  
+    <div *ngFor='let response of responses' class="card card_survey"> 
+        <div class="card-body">
+          <h5 class="card-title">{{response.label}}</h5>
+          <div *ngFor='let answer of response.answers'>{{answer}}</div>
+        </div>
+    </div>
+  </div>

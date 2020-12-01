@@ -5,24 +5,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommonService {
   // Local url
-  private surveysUrl = 'http://localhost:3000/api/';
+  private surveysUrl = 'http://localhost:3000/api/survey_response/';
   // Heroku url
-  // private surveysUrl = 'https://comp229-curvey-project.herokuapp.com/api/';
+  // private surveysUrl = 'https://comp229-curvey-project.herokuapp.com/api/survey_response/';
   constructor(private httpClient: HttpClient) { }
   saveSurvey(survey){
-    return this.httpClient.post(this.surveysUrl+'survey/create/', survey)
+    return this.httpClient.post(this.surveysUrl, survey)
   }
 
   updateSurvey(survey){
-    return this.httpClient.post(this.surveysUrl+'survey/update/', survey)
+    return this.httpClient.post(this.surveysUrl+`${survey._id}`, survey)
   }
 
-  getSurveys(){
-    return this.httpClient.get(this.surveysUrl+'survey/')
+  getSurveys(survey_id){
+    return this.httpClient.post(this.surveysUrl+'list/'+survey_id, survey_id)
   }
 
   deleteSurvey(id){
-    return this.httpClient.post(this.surveysUrl+'survey/delete/', {'_id':id});
+    return this.httpClient.post(this.surveysUrl+'delete/', {'_id':id});
   }
 }
  

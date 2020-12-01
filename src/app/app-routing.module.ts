@@ -6,6 +6,7 @@ import { SurveyManagementComponent } from './pages/survey-management/survey-mana
 import { UsersComponent } from './pages/users/users.component';
 import { OpenSurveyComponent } from './pages/open-survey/open-survey.component';
 import { EditSurveyComponent } from './pages/edit-survey/edit-survey.component';
+import { ResponseSurveyComponent } from './pages/response-survey/response-survey.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './auth.guard';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'survey',component:SurveyComponent,data:{title:'Survey', canActivate: [AuthGuard]}},
   {path:'survey-management',component:SurveyManagementComponent,data:{title:'Survey Management', canActivate: [AuthGuard]}},
   {path:'users',component:UsersComponent,data:{title:'Users Management', canActivate: [AuthGuard]}},
+  {path:'response-survey',component:ResponseSurveyComponent,data:{title:'Response Survey Managment', canActivate: [AuthGuard]}},
   {path:'open-survey',component:OpenSurveyComponent},
   {path:'edit-survey',component:EditSurveyComponent, canActivate: [AuthGuard]},
   {path:'edit-user',component:EditUserComponent, canActivate: [AuthGuard]},
