@@ -1,24 +1,24 @@
 <div class="body-wrapper">
 <h1>Sign Up</h1>
-<div class="registration_form">
+<div class="registration_form form_border">
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <label for="forenameLable">First Name</label>
     <input required type="text" class="form-control" id="forename" name="forename" [(ngModel)]="forename">
 
-    <label for="surnameLable">Last Name</label>
+    <div class="curvey_label"><label for="surnameLable">Last Name</label></div>
     <input required type="text" class="form-control" id="surname" name="surname" [(ngModel)]="surname">
 
-    <label for="usernameLable">Username</label>
+    <div class="curvey_label"><label for="usernameLable">Username</label></div>
     <input required type="text" class="form-control" id="username" name="username" [(ngModel)]="username">
     
-    <label for="nameLable">Email</label>
+    <div class="curvey_label"><label for="nameLable">Email</label></div>
     <input required type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
     
-    <label for="passwordLable">Password</label>
+    <div class="curvey_label"><label for="passwordLable">Password</label></div>
     <input required type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
-     <br><br>
-    <div style="text-align: center;">
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+     <br>
+    <div>
+        <button type="submit" class="curvey_button">Sign Up</button>
     </div>
 
 </form>

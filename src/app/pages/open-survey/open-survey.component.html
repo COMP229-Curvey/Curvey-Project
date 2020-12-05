@@ -1,8 +1,8 @@
 <div class="body-wrapper">
-    <div class="center_form">
+    <div class="center_form card">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-            <h5 style="text-align: center;" class="card-title">{{survey.title}}</h5>
-            <p style="text-align: center;" class="card-text">{{survey.description}}</p>
+            <h3>{{survey.title}}</h3>
+            <p class="card-text">{{survey.description}}</p>
             <div *ngFor='let question of survey.questions; index as i' class="form-group"> 
                 <label for="question_{{i}}_label">{{i+1}}&nbsp;{{question.label}}</label>
                 &nbsp;<input *ngIf="question.style==1" class="form-control" id="{{i}}" name="{{i}}" [ngModel]="question.value">
@@ -19,8 +19,8 @@
 
 
             </div>
-            <div style="text-align: center;">
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <div>
+                <button type="submit" class="curvey_button">Submit</button>
             </div>
         </form>
     </div>

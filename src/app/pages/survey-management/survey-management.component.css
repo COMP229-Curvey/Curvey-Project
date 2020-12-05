@@ -9,13 +9,19 @@ table {
   
   td, th {
     border: 1px solid #dddddd;
-    text-align: left;
     padding: 8px;
+    text-align: center;
+    background-color: #fff;
   }
   
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+  .title_table{
+    text-align: left;
+  }
+
   .center_form{
     width: 70%;
     margin: auto;
@@ -30,15 +36,46 @@ table {
   margin-bottom: 30px;
 }
 
-.curvey_button{
-  margin-left: 10px;
+.container_button {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.card_survey_button{
+.card_button{
   width: 10%;
+  color: #fff;
+  background-color: #6494a3;
+  border-color: #6494a3;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 
-.curvey_button{
-  margin-left: 10px;
+a:hover {
+  text-decoration: none;
+}
+
+.editable_button {
+  color: #fff;
+  background-color: #6494a3;
+  border-color: #6494a3;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
 }

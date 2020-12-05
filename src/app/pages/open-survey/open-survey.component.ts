@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{ ActivatedRoute} from '@angular/router';
 import {CommonService} from '../../common.service';
 import{ Router} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-open-survey',
   templateUrl: './open-survey.component.html',

@@ -1,5 +1,5 @@
 <div class="body-wrapper">
-  <div class="center_form">
+  <div class="center_form form_border">
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <label for="forenameLabel">First Name</label>
         <input required type="text" class="form-control" id="forename" name="forename" [ngModel]="user.forename">
@@ -11,8 +11,8 @@
         <input required type="text" class="form-control" id="username" name="username" [ngModel]="user.username">
         <label for="passwordLabel">Password</label>
         <input required type="password" class="form-control" id="password" name="password" [ngModel]="user.password">
-        <div style="text-align: center;">
-          <button type="submit" class="btn btn-primary">Submit</button>
+        <div>
+          <button type="submit" class="curvey_button">Submit</button>
       </div>
       </form>
     </div>

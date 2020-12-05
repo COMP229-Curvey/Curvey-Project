@@ -1,11 +1,14 @@
 <div class="body-wrapper">
-  <div class="center_form">
+  <div class="center_form form_border">
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <label for="titleLable">Title</label>
         <input required type="text" class="form-control" id="title" name="title" [ngModel]="survey.title">
         <label for="descriptionLable">Description</label>
         <input required type="text" class="form-control" id="description" name="description" [ngModel]="survey.description">
-        <label for="questions">Questions:</label>
+        
+        <div class="question_label">
+        <label for="questions">Questions</label>
+        </div>
         <div *ngFor='let question of survey.questions; index as i' class="form-group"> 
             <label for="labelLable_{{i}}">Label</label>
             <input required type="text" class="form-control" id="label_{{i}}" name="label_{{i}}" [ngModel]="question.label">
@@ -13,9 +16,9 @@
             <input required type="number" class="form-control" id="style_{{i}}" name="style_{{i}}" [ngModel]="question.style">
         </div>
 
-        <div style="text-align: center;">
-          <a href="javascript:void(0);" (click)="addField()" class="btn btn-primary">Add Question</a>
-          <button type="submit" class="btn btn-primary">Submit</button>
+        <div>
+          <a href="javascript:void(0);" (click)="addField()" class="curvey_button">Add Question</a>
+          <button type="submit" class="curvey_button btn_space">Submit</button>
       </div>
     </form>
   </div>
