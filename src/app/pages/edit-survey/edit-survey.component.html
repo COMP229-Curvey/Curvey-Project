@@ -13,7 +13,11 @@
             <label for="labelLable_{{i}}">Label</label>
             <input required type="text" class="form-control" id="label_{{i}}" name="label_{{i}}" [ngModel]="question.label">
             <label for="styleLable_{{i}}">Style</label>
-            <input required type="number" class="form-control" id="style_{{i}}" name="style_{{i}}" [ngModel]="question.style">
+            <select required class="form-control" id="style_{{i}}" name="style_{{i}}" [ngModel]="question.style">
+              <option value="" disabled>Choose a style</option>
+              <option value=1>Textbox</option>
+              <option value=2>Three option quality</option>
+            </select>
         </div>
 
         <div>

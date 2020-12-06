@@ -18,9 +18,9 @@
         <tr *ngFor='let survey of surveys'>
             <td class="title_table">{{survey.title}}</td>
             <td>{{survey.description}}</td>
-            <td><a href="javascript:void(0);" (click)="responseSurvey(survey)" class="editable_button" *ngIf="this.auth.loggedIn">🗊</a></td>
-            <td><a href="javascript:void(0);" (click)="editSurvey(survey)" class="editable_button" *ngIf="this.auth.loggedIn">🖉</a></td>
-            <td><a href="javascript:void(0);" (click)="deleteSurvey(survey._id)" class="editable_button" *ngIf="this.auth.loggedIn">␡</a></td>
+            <td><a href="javascript:void(0);" (click)="responseSurvey(survey)" class="editable_button" *ngIf="this.auth.loggedIn">☰</a></td>
+            <td><a href="javascript:void(0);" (click)="editSurvey(survey)" class="editable_button" *ngIf="this.auth.loggedIn">✎</a></td>
+            <td><a href="javascript:void(0);" (click)="deleteSurvey(survey._id)" class="editable_button" *ngIf="this.auth.loggedIn">✕</a></td>
         </tr>
     </table>
     </div>
