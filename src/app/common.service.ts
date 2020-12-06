@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommonService {
   // Local url
-  private surveysUrl = 'http://localhost:3000/api/survey_response/';
+  // private surveysUrl = 'http://localhost:3000/api/survey_response/';
   // Heroku url
-  // private surveysUrl = 'https://comp229-curvey-project.herokuapp.com/api/survey_response/';
+  private surveysUrl = 'https://comp229-curvey-project.herokuapp.com/api/survey_response/';
   constructor(private httpClient: HttpClient) { }
   saveSurvey(survey){
     return this.httpClient.post(this.surveysUrl, survey)
