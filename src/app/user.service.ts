@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 // Local url
-private usersUrl = 'http://localhost:3000/api/users/';
+// private usersUrl = 'http://localhost:3000/api/users/';
 // Heroku url
-// private usersUrl = 'https://comp229-curvey-project.herokuapp.com/api/users/';
+private usersUrl = 'https://comp229-curvey-project.herokuapp.com/api/users/';
 constructor(private httpClient: HttpClient) { }
 saveUser(user){
   return this.httpClient.post(this.usersUrl, user)
